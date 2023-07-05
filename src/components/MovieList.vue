@@ -4,7 +4,7 @@
       <MovieItem
       v-for="movie in movies"
       :key="movie.imdbID"
-      :movie="movie " />
+      :movie="movie" />
     </div>
   </div>
 </template>

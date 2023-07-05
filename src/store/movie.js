@@ -2,7 +2,7 @@ import axios from "axios";
 
 export default {
   // module
-  namesapaced: true,
+  namespaced: true,
   // data
   state: () => ({
     movies: [],
@@ -19,7 +19,8 @@ export default {
       })
     },
     resetMovies(state) {
-      state.movies = []
+      state.movies = [],
+      state.loading = false
     }
   },
   // 비동기
@@ -33,6 +34,8 @@ export default {
       commit('updateState', {
         movies: Search
       })
+      console.log(totalResults);
+      console.log(typeof totalResults);
     }
   }
 }
