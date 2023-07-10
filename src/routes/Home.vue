@@ -6,7 +6,7 @@
 
 <script>
 import Headline from '~/components/Headline';
-import Search from '../components/Search.vue';
+import Search from '../components/Search';
 import MovieList from '~/components/MovieList';
 
 export default {
@@ -14,6 +14,9 @@ export default {
     Headline,
     Search,
     MovieList
+  },
+  created() {
+    this.$store.commit('movie/resetMovies')
   }
 }
 </script>

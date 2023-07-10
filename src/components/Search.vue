@@ -5,7 +5,7 @@
     class="form-control"
     type="text"
     placeholder="Search for Movies, Series & more"
-    @keyup.enter="apply">
+    @keyup.enter="apply" />
     <div class="selects">
       <select
         v-for="filter in filters"
@@ -77,6 +77,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+
 .container {
   display: flex;
   > * {

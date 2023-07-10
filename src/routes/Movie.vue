@@ -75,6 +75,7 @@
 
 <script>
 import Loader from '~/components/Loader'
+import { mapState } from 'vuex'
 
 export default {
   components: {
@@ -86,12 +87,10 @@ export default {
     }
   },
   computed: {
-    theMovie() {
-      return this.$store.state.movie.theMovie
-    },
-    loading() {
-      return this.$store.state.movie.loading
-    }
+    ...mapState('movie', [
+      'theMovie',
+      'loading'
+    ])
   },
   created() {
     this.$store.dispatch('movie/searchMovieWithId', {
