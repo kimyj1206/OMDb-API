@@ -1,12 +1,12 @@
-const axios = require('axios')
-const { OMDB_API_KEY } = process.env
+const axios = require('axios');
+const { OMDB_API_KEY } = process.env;
 
 exports.handler = async function(event) {
   console.log(event)
   const payload = JSON.parse(event.body)
-  const {title, type, year, page, id } = payload;
+  const { title, type, year, page, id } = payload;
   const url = id
-  ? `https://www.omdbapi.com/?apikey=${OMDB_API_KEY}&i=${id}` // id가 있을 경우
+  ? `https://www.omdbapi.com/?apikey=${OMDB_API_KEY}&i=${id}&plot=full` // id가 있을 경우
   : `https://www.omdbapi.com/?apikey=${OMDB_API_KEY}&s=${title}&type=${type}&y=${year}&page=${page}` // id가 없을 경우
 
   try {
@@ -15,16 +15,16 @@ exports.handler = async function(event) {
       return {
         statusCode: 400,
         body: data.Error
-      }
+      };
     }
     return {
       statusCode: 200,
       body: JSON.stringify(data)
-    }
+    };
   } catch(error) {
     return {
       statusCode: error.response.status,
       body: error.message
-    }
+    };
   }
 }

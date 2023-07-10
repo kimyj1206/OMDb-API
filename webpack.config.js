@@ -73,5 +73,11 @@ module.exports = {
 
     new VueLoaderPlugin(),
     new Dotenv()
-  ]
+  ],
+
+  devServer: {
+    host: 'localhost',
+    port: 8079,
+    hot: true
+  }
 }

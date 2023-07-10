@@ -4,8 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "dev": "webpack-dev-server --mode development",
-    "dev:netlify": "netlify dev",
+    "dev": "netlify dev",
     "dev:webpack": "webpack-dev-server --mode development",
     "build": "webpack --mode production"
   },
